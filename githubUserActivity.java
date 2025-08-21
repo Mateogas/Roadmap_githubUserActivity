@@ -49,7 +49,7 @@ public class githubUserActivity {
                         count += commits.length();
 
                     } else if (type.equals("IssuesEvent")) {
-                        // "action" exists only for IssuesEvent
+    
                         String action = payload.getString("action"); 
                         if (action.equals("opened")) {
                             String additionalMessage = "- Opened a new issue in " + repo.getString("name");
@@ -59,6 +59,7 @@ public class githubUserActivity {
                     }
 
                 }
+
                 System.out.println("Total commits: " + count);
             }
         } catch (MalformedURLException e) {
